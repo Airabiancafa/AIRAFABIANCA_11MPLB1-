@@ -1,0 +1,737 @@
+html
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Aira Fabianca | MPLB SMK Cyber Media</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastel: {
+                            50: '#fff5f7',
+                            100: '#ffe4e9',
+                            200: '#fecd9d7',
+                            300: '#fba5b9',
+                            400: '#f77296',
+                            500: '#ee4774',
+                            600: '#da2455',
+                            accent: '#fdf2f4',
+                            card: '#ffffff',
+                            green: '#749e7b',
+                            softgreen: '#e8f2ea'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tulip-bg {
+            background-color: #fff5f7;
+            background-image: radial-gradient(#fba5b9 0.75px, transparent 0.75px), radial-gradient(#fba5b9 0.75px, #fff5f7 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.2;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(254, 205, 215, 0.5);
+        }
+        .floating-tulip {
+            animation: float 6s ease-in-out infinite;
+        }
+        .floating-tulip-delayed {
+            animation: float 7s ease-in-out 2s infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(5deg); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-pastel-50 text-gray-800 antialiased selection:bg-pastel-300 selection:text-white">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card border-b border-pastel-200/60 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo dengan Ikon Tulip -->
+            <a href="#hero" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-full bg-pastel-100 flex items-center justify-center text-pastel-500 group-hover:scale-110 transition-transform shadow-inner">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C10.5 4 9 7 9 10c0 2.5 1.5 4.5 3 5 1.5-0.5 3-2.5 3-5 0-3-1.5-6-3-8z"/>
+                        <path d="M8 5C6.5 7 5 9.5 5 12c0 3 2 5.5 4 6-1-1.5-1.5-3.5-1-5.5C8.5 10 9 7.5 8 5z"/>
+                        <path d="M16 5c-1 2.5-.5 5 .0 7.5.5 2 0 4-1 5.5 2-.5 4-3 4-6 0-2.5-1.5-5-3-7z"/>
+                        <path d="M12 15v7M12 22c-2-2-4-3-4-3M12 22c2-2 4-3 4-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
+                <span class="font-serif font-bold text-xl tracking-wide text-gray-800 group-hover:text-pastel-500 transition-colors">Aira<span class="text-pastel-500">.</span></span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
+                <a href="#hero" class="hover:text-pastel-500 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pastel-400 hover:after:w-full after:transition-all">Beranda</a>
+                <a href="#about" class="hover:text-pastel-500 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pastel-400 hover:after:w-full after:transition-all">Tentang Saya</a>
+                <a href="#skills" class="hover:text-pastel-500 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pastel-400 hover:after:w-full after:transition-all">Keahlian</a>
+                <a href="#projects" class="hover:text-pastel-500 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pastel-400 hover:after:w-full after:transition-all">Project</a>
+                <a href="#contact" class="hover:text-pastel-500 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-pastel-400 hover:after:w-full after:transition-all">Kontak</a>
+            </nav>
+
+            <!-- Call To Action Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-pastel-400 hover:bg-pastel-500 text-white font-medium text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-regular fa-paper-plane"></i> Hubungi Saya
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-gray-700 hover:text-pastel-500 p-2 focus:outline-none" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white/95 border-b border-pastel-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#hero" class="mobile-nav-link block py-2 px-4 rounded-xl hover:bg-pastel-50 text-gray-700 font-medium">Beranda</a>
+            <a href="#about" class="mobile-nav-link block py-2 px-4 rounded-xl hover:bg-pastel-50 text-gray-700 font-medium">Tentang Saya</a>
+            <a href="#skills" class="mobile-nav-link block py-2 px-4 rounded-xl hover:bg-pastel-50 text-gray-700 font-medium">Keahlian</a>
+            <a href="#projects" class="mobile-nav-link block py-2 px-4 rounded-xl hover:bg-pastel-50 text-gray-700 font-medium">Project</a>
+            <a href="#contact" class="mobile-nav-link block py-2 px-4 rounded-xl hover:bg-pastel-50 text-gray-700 font-medium">Kontak</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="min-h-[calc(100vh-5rem)] flex items-center relative overflow-hidden py-16 lg:py-24 tulip-bg">
+            <!-- Decorative Floating Tulip Elements -->
+            <div class="absolute top-12 left-10 text-pastel-300 opacity-40 floating-tulip pointer-events-none">
+                <svg class="w-16 h-16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C10.5 4 9 7 9 10c0 2.5 1.5 4.5 3 5 1.5-0.5 3-2.5 3-5 0-3-1.5-6-3-8z"/><path d="M8 5C6.5 7 5 9.5 5 12c0 3 2 5.5 4 6-1-1.5-1.5-3.5-1-5.5C8.5 10 9 7.5 8 5z"/><path d="M16 5c-1 2.5-.5 5 .0 7.5.5 2 0 4-1 5.5 2-.5 4-3 4-6 0-2.5-1.5-5-3-7z"/><path d="M12 15v7M12 22c-2-2-4-3-4-3M12 22c2-2 4-3 4-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </div>
+            <div class="absolute bottom-16 right-12 text-pastel-300 opacity-40 floating-tulip-delayed pointer-events-none">
+                <svg class="w-24 h-24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C10.5 4 9 7 9 10c0 2.5 1.5 4.5 3 5 1.5-0.5 3-2.5 3-5 0-3-1.5-6-3-8z"/><path d="M8 5C6.5 7 5 9.5 5 12c0 3 2 5.5 4 6-1-1.5-1.5-3.5-1-5.5C8.5 10 9 7.5 8 5z"/><path d="M16 5c-1 2.5-.5 5 .0 7.5.5 2 0 4-1 5.5 2-.5 4-3 4-6 0-2.5-1.5-5-3-7z"/><path d="M12 15v7M12 22c-2-2-4-3-4-3M12 22c2-2 4-3 4-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Text Introduction -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pastel-100/80 border border-pastel-200 text-pastel-600 text-sm font-semibold shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-pastel-400 animate-ping"></span>
+                            Tulip Portfolio Theme 🌷
+                        </div>
+                        
+                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            Selamat Datang! Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-pastel-500 to-pastel-400 italic">Aira Fabianca</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+                            "Hallo, selamat datang di website portfolio saya. Website ini dibuat untuk menaruh seluruh project yang saya buat !"
+                        </p>
+
+                        <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                            <a href="#projects" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-pastel-400 to-pastel-500 hover:from-pastel-500 hover:to-pastel-600 text-white font-semibold shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                                <i class="fa-solid fa-briefcase"></i> Lihat Project Saya
+                            </a>
+                            <a href="#contact" class="px-7 py-3.5 rounded-full bg-white hover:bg-pastel-50 text-pastel-600 border border-pastel-300 font-semibold shadow-sm hover:shadow-md transition-all flex items-center gap-2">
+                                <i class="fa-solid fa-comments"></i> Hubungi Kontak
+                            </a>
+                        </div>
+
+                        <!-- Quick Badges -->
+                        <div class="pt-8 border-t border-pastel-200/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-left">
+                            <div class="bg-white/70 p-3 rounded-2xl border border-pastel-200 shadow-sm flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-pastel-100 flex items-center justify-center text-pastel-500">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">Siswa</p>
+                                    <p class="text-xs font-bold text-gray-800">SMK Cyber Media</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 p-3 rounded-2xl border border-pastel-200 shadow-sm flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-pastel-100 flex items-center justify-center text-pastel-500">
+                                    <i class="fa-solid fa-building"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">Jurusan</p>
+                                    <p class="text-xs font-bold text-gray-800">MPLB 2026</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/70 p-3 rounded-2xl border border-pastel-200 shadow-sm flex items-center gap-3 col-span-2 sm:col-span-1">
+                                <div class="w-10 h-10 rounded-xl bg-pastel-100 flex items-center justify-center text-pastel-500">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 font-medium">Passion</p>
+                                    <p class="text-xs font-bold text-gray-800">Administrasi & Bisnis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Photo Frame -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative group max-w-xs sm:max-w-sm w-full">
+                            <!-- Soft Gradient Aura -->
+                            <div class="absolute -inset-4 bg-gradient-to-tr from-pastel-300 via-pastel-200 to-pastel-400 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                            
+                            <!-- Main Photo Card Frame -->
+                            <div class="relative rounded-3xl overflow-hidden glass-card p-4 shadow-2xl border border-white">
+                                <div class="relative rounded-2xl overflow-hidden aspect-[3/4] bg-pastel-100">
+                                    <img src="1000394035_2.jpg" alt="Aira Fabianca" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition duration-500">
+                                    
+                                    <!-- Tulip Badge Overlay -->
+                                    <div class="absolute bottom-3 left-3 right-3 glass-card p-3 rounded-xl border border-white/60 shadow-lg flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-8 h-8 rounded-full bg-pastel-400 text-white flex items-center justify-center font-bold text-xs">
+                                                AF
+                                            </div>
+                                            <div>
+                                                <h4 class="text-xs font-bold text-gray-800">Aira Fabianca</h4>
+                                                <p class="text-[10px] text-pastel-600 font-medium">MPLB Specialist</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-lg">🌷</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Decorative Floating Tulip Badges -->
+                            <div class="absolute -top-4 -right-4 bg-white p-3 rounded-2xl shadow-lg border border-pastel-200 flex items-center gap-2 transform rotate-6 hover:rotate-0 transition-transform">
+                                <span class="text-xl">🌸</span>
+                                <span class="text-xs font-bold text-gray-700">Cyber Media</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT SECTION -->
+        <section id="about" class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-pastel-500 font-bold tracking-wider text-sm uppercase bg-pastel-50 px-4 py-1.5 rounded-full border border-pastel-200">Perkenalan Diri</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-3">Tentang Saya</h2>
+                    <div class="w-16 h-1 bg-pastel-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Decorative Graphic / Feature Box -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-br from-pastel-50 to-pastel-100 rounded-3xl p-8 border border-pastel-200 relative overflow-hidden shadow-sm">
+                            <div class="absolute -right-10 -bottom-10 opacity-10 text-pastel-500 pointer-events-none">
+                                <svg class="w-64 h-64" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C10.5 4 9 7 9 10c0 2.5 1.5 4.5 3 5 1.5-0.5 3-2.5 3-5 0-3-1.5-6-3-8z"/><path d="M8 5C6.5 7 5 9.5 5 12c0 3 2 5.5 4 6-1-1.5-1.5-3.5-1-5.5C8.5 10 9 7.5 8 5z"/><path d="M16 5c-1 2.5-.5 5 .0 7.5.5 2 0 4-1 5.5 2-.5 4-3 4-6 0-2.5-1.5-5-3-7z"/><path d="M12 15v7M12 22c-2-2-4-3-4-3M12 22c2-2 4-3 4-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                            </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-gray-800 mb-4">Profil Singkat & Pendidikan</h3>
+                            
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-pastel-500 shrink-0 mt-1">
+                                        <i class="fa-solid fa-school"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Institusi Pendidikan</h4>
+                                        <p class="text-sm text-gray-600">SMK CYBER MEDIA Jakarta</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-pastel-500 shrink-0 mt-1">
+                                        <i class="fa-solid fa-folder-tree"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Jurusan Keahlian</h4>
+                                        <p class="text-sm text-gray-600">MPLB (Manajemen Perkantoran dan Layanan Bisnis)</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-pastel-500 shrink-0 mt-1">
+                                        <i class="fa-solid fa-bullseye"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Fokus Profesional</h4>
+                                        <p class="text-sm text-gray-600">Administrasi Perkantoran, Manajemen Dokumen, & Komunikasi Bisnis</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Bio -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-800">
+                            Halo! Saya Aira Fabianca, Pelajar Berdedikasi di Bidang Administrasi Bisnis.
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Saat ini saya sedang menempuh pendidikan di <span class="font-semibold text-pastel-600">SMK CYBER MEDIA</span> pada jurusan <span class="font-semibold text-pastel-600">MPLB (Manajemen Perkantoran dan Layanan Bisnis)</span>. Saya memiliki minat yang besar dalam mengelola tata kelola administrasi modern, pengelolaan arsip digital, penyusunan laporan bisnis, serta komunikasi publik yang efektif.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Melalui jurusan MPLB ini, saya terus mengasah ketelitian, kemampuan komunikasi antarpersonal, dan penggunaan perangkat lunak perkantoran untuk mendukung operasional bisnis secara efisien dan profesional.
+                        </p>
+
+                        <!-- Key Pillars -->
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 rounded-2xl bg-pastel-50 border border-pastel-200">
+                                <div class="text-pastel-500 font-bold text-lg mb-1">
+                                    <i class="fa-solid fa-check-double mr-1"></i> Teliti & Rapi
+                                </div>
+                                <p class="text-xs text-gray-500">Mampu mengelola berkas dan dokumen secara terstruktur.</p>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-pastel-50 border border-pastel-200">
+                                <div class="text-pastel-500 font-bold text-lg mb-1">
+                                    <i class="fa-solid fa-comments mr-1"></i> Komunikatif
+                                </div>
+                                <p class="text-xs text-gray-500">Penyampaian pesan yang jelas baik secara tertulis maupun lisan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. SKILLS SECTION -->
+        <section id="skills" class="py-20 bg-pastel-50/70 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-pastel-500 font-bold tracking-wider text-sm uppercase bg-white px-4 py-1.5 rounded-full border border-pastel-200 shadow-sm">Keahlian Utamaku</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-3">Skills & Kompetensi</h2>
+                    <p class="text-gray-600 mt-2 text-sm">Kemampuan dalam pengoperasian software perkantoran dan komunikasi lintas bahasa.</p>
+                    <div class="w-16 h-1 bg-pastel-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Skill Card 1: Word -->
+                    <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-pastel-200 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-file-word"></i>
+                                </div>
+                                <span class="px-3 py-1 bg-pastel-100 text-pastel-600 font-bold text-xs rounded-full">Keahlian Utama</span>
+                            </div>
+                            <h3 class="font-bold text-xl text-gray-800 mb-2">Microsoft Word</h3>
+                            <p class="text-xs text-gray-500 mb-4">Penyusunan dokumen resmi, pengetikan cepat, pembuatan surat bisnis, dan formatting laporan perkantoran.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1 text-gray-700">
+                                <span>Tingkat Penguasaan</span>
+                                <span class="text-pastel-600">90%</span>
+                            </div>
+                            <div class="w-full bg-pastel-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-pastel-400 to-pastel-500 h-full rounded-full transition-all duration-1000" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2: Excel -->
+                    <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-pastel-200 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-file-excel"></i>
+                                </div>
+                                <span class="px-3 py-1 bg-pastel-100 text-pastel-600 font-bold text-xs rounded-full">Keahlian Utama</span>
+                            </div>
+                            <h3 class="font-bold text-xl text-gray-800 mb-2">Microsoft Excel</h3>
+                            <p class="text-xs text-gray-500 mb-4">Pengolahan data angka, tabel, rumus dasar & logika (SUM, AVERAGE, VLOOKUP), serta rekapitulasi data.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1 text-gray-700">
+                                <span>Tingkat Penguasaan</span>
+                                <span class="text-pastel-600">85%</span>
+                            </div>
+                            <div class="w-full bg-pastel-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-pastel-400 to-pastel-500 h-full rounded-full transition-all duration-1000" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3: PowerPoint -->
+                    <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-pastel-200 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-file-powerpoint"></i>
+                                </div>
+                                <span class="px-3 py-1 bg-pastel-100 text-pastel-600 font-bold text-xs rounded-full">Keahlian Utama</span>
+                            </div>
+                            <h3 class="font-bold text-xl text-gray-800 mb-2">Microsoft PowerPoint</h3>
+                            <p class="text-xs text-gray-500 mb-4">Desain slide presentasi interaktif yang menarik, estetik, dan informatif untuk keperluas bisnis dan sekolah.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1 text-gray-700">
+                                <span>Tingkat Penguasaan</span>
+                                <span class="text-pastel-600">88%</span>
+                            </div>
+                            <div class="w-full bg-pastel-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-pastel-400 to-pastel-500 h-full rounded-full transition-all duration-1000" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 4: Bahasa Indonesia -->
+                    <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-pastel-200 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-comments"></i>
+                                </div>
+                                <span class="px-3 py-1 bg-pastel-100 text-pastel-600 font-bold text-xs rounded-full">Komunikasi</span>
+                            </div>
+                            <h3 class="font-bold text-xl text-gray-800 mb-2">Bahasa Indonesia</h3>
+                            <p class="text-xs text-gray-500 mb-4">Komunikasi lisan & tulisan yang santun, profesional, artikulatif, dan sesuai dengan tata bahasa formal perkantoran.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1 text-gray-700">
+                                <span>Tingkat Penguasaan (Native)</span>
+                                <span class="text-pastel-600">95%</span>
+                            </div>
+                            <div class="w-full bg-pastel-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-pastel-400 to-pastel-500 h-full rounded-full transition-all duration-1000" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 5: Bahasa Inggris -->
+                    <div class="bg-white rounded-3xl p-6 shadow-sm hover:shadow-xl transition duration-300 border border-pastel-200 flex flex-col justify-between group md:col-span-2 lg:col-span-1">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-500 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-language"></i>
+                                </div>
+                                <span class="px-3 py-1 bg-pastel-100 text-pastel-600 font-bold text-xs rounded-full">Komunikasi</span>
+                            </div>
+                            <h3 class="font-bold text-xl text-gray-800 mb-2">Bahasa Inggris</h3>
+                            <p class="text-xs text-gray-500 mb-4">Kemampuan komunikasi dasar hingga menengah dalam menyusun email bisnis, percakapan sehari-hari, & membaca instruksi.</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-1 text-gray-700">
+                                <span>Tingkat Penguasaan</span>
+                                <span class="text-pastel-600">80%</span>
+                            </div>
+                            <div class="w-full bg-pastel-100 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-pastel-400 to-pastel-500 h-full rounded-full transition-all duration-1000" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. PROJECTS SECTION -->
+        <section id="projects" class="py-20 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-pastel-500 font-bold tracking-wider text-sm uppercase bg-pastel-50 px-4 py-1.5 rounded-full border border-pastel-200">Kumpulan Karya</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-3">Project & Tugas</h2>
+                    <p class="text-gray-600 mt-2 text-sm">Berikut adalah seluruh project yang pernah saya kerjakan selama menempuh jurusan MPLB.</p>
+                    <div class="w-16 h-1 bg-pastel-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project Item 1 -->
+                    <div class="rounded-3xl overflow-hidden bg-pastel-50 border border-pastel-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="relative h-48 bg-gradient-to-br from-pastel-200 to-pastel-300 flex items-center justify-center overflow-hidden">
+                            <span class="text-6xl opacity-40 group-hover:scale-125 transition-transform duration-500">📂</span>
+                            <div class="absolute inset-0 bg-pastel-500/10 group-hover:bg-pastel-500/0 transition-colors"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-pastel-600 shadow-sm">Administrasi</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-800 mb-2 group-hover:text-pastel-500 transition-colors">Penyusunan Sistem Arsip Digital</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed mb-4">Project merancang tata kelola kearsipan berbasis folder terstruktur dan pengkategorian dokumen kantor menggunakan MS Word & Cloud Storage.</p>
+                            <div class="flex flex-wrap gap-2 pt-2 border-t border-pastel-200/60">
+                                <span class="px-2.5 py-1 bg-white text-gray-600 rounded-md text-[10px] font-medium border border-pastel-200">MS Word</span>
+                                <span class="px-2.5 py-1 bg-white text-gray-600 rounded-md text-[10px] font-medium border border-pastel-200">Kearsipan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Item 2 -->
+                    <div class="rounded-3xl overflow-hidden bg-pastel-50 border border-pastel-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="relative h-48 bg-gradient-to-br from-pastel-300 to-pastel-400 flex items-center justify-center overflow-hidden">
+                            <span class="text-6xl opacity-40 group-hover:scale-125 transition-transform duration-500">📊</span>
+                            <div class="absolute inset-0 bg-pastel-500/10 group-hover:bg-pastel-500/0 transition-colors"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-pastel-600 shadow-sm">Pengolahan Data</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-800 mb-2 group-hover:text-pastel-500 transition-colors">Laporan Keuangan & Inventaris</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed mb-4">Pembuatan rekapitulasi data barang inventaris kantor dan laporan keuangan simulasi menggunakan rumus otomatis Microsoft Excel.</p>
+                            <div class="flex flex-wrap gap-2 pt-2 border-t border-pastel-200/60">
+                                <span class="px-2.5 py-1 bg-white text-gray-600 rounded-md text-[10px] font-medium border border-pastel-200">MS Excel</span>
+                                <span class="px-2.5 py-1 bg-white text-gray-600 rounded-md text-[10px] font-medium border border-pastel-200">Data Entry</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Item 3 -->
+                    <div class="rounded-3xl overflow-hidden bg-pastel-50 border border-pastel-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                        <div class="relative h-48 bg-gradient-to-br from-pastel-200 to-pastel-400 flex items-center justify-center overflow-hidden">
+                            <span class="text-6xl opacity-40 group-hover:scale-125 transition-transform duration-500">🌷</span>
+                            <div class="absolute inset-0 bg-pastel-500/10 group-hover:bg-pastel-500/0 transition-colors"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-pastel-600 shadow-sm">Presentasi</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-lg text-gray-800 mb-2 group-hover:text-pastel-500 transition-colors">Desain Slide Company Profile</h3>
+                            <p class="text-xs text-gray-600 leading-relaxed mb-4">Merancang materi presentasi interaktif bermotif modern pastel untuk simulasi penawaran layanan bisnis perkantoran.</p>
+                            <div class="flex flex-wrap gap-2 pt-2 border-t border-pastel-200/60">
+                                <span class="px-2.5 py-1 bg-white text-gray-600 rounded-md text-[10px] font-medium border border-pastel-200">PowerPoint</span>
+                                <span class="px-2.5 py-1 bg-white text-gray-600 rounded-md text-[10px] font-medium border border-pastel-200">Public Speaking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. CONTACT ME SECTION -->
+        <section id="contact" class="py-20 bg-pastel-50 relative overflow-hidden tulip-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-pastel-500 font-bold tracking-wider text-sm uppercase bg-white px-4 py-1.5 rounded-full border border-pastel-200 shadow-sm">Terhubung Dengan Saya</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-3">Kontak & Media Sosial</h2>
+                    <p class="text-gray-600 mt-2 text-sm">Mari saling terhubung untuk berdiskusi, bekerja sama, atau sekadar menyapa!</p>
+                    <div class="w-16 h-1 bg-pastel-400 mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Social Media Links (Left Column) -->
+                    <div class="lg:col-span-6 space-y-4">
+                        
+                        <!-- Instagram Card -->
+                        <a href="https://instagram.com/biaacsfe" target="_blank" rel="noopener noreferrer" class="glass-card p-5 rounded-2xl flex items-center justify-between border border-pastel-200 hover:border-pastel-400 hover:shadow-lg transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-500">Instagram</h4>
+                                    <p class="text-base font-bold text-gray-800 group-hover:text-pastel-500 transition-colors">@biaacsfe</p>
+                                </div>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-pastel-100 flex items-center justify-center text-pastel-600 group-hover:bg-pastel-400 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                            </span>
+                        </a>
+
+                        <!-- TikTok Card -->
+                        <a href="https://tiktok.com/@.m0onszss" target="_blank" rel="noopener noreferrer" class="glass-card p-5 rounded-2xl flex items-center justify-between border border-pastel-200 hover:border-pastel-400 hover:shadow-lg transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-black text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-500">TikTok</h4>
+                                    <p class="text-base font-bold text-gray-800 group-hover:text-pastel-500 transition-colors">@.m0onszss</p>
+                                </div>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-pastel-100 flex items-center justify-center text-pastel-600 group-hover:bg-pastel-400 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                            </span>
+                        </a>
+
+                        <!-- WhatsApp Card -->
+                        <a href="https://wa.me/6287739133889" target="_blank" rel="noopener noreferrer" class="glass-card p-5 rounded-2xl flex items-center justify-between border border-pastel-200 hover:border-pastel-400 hover:shadow-lg transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-500">WhatsApp</h4>
+                                    <p class="text-base font-bold text-gray-800 group-hover:text-pastel-500 transition-colors">087739133889</p>
+                                </div>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-pastel-100 flex items-center justify-center text-pastel-600 group-hover:bg-pastel-400 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                            </span>
+                        </a>
+
+                        <!-- Email Card -->
+                        <a href="mailto:airaf9ca@gmail.com" class="glass-card p-5 rounded-2xl flex items-center justify-between border border-pastel-200 hover:border-pastel-400 hover:shadow-lg transition-all group">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-pastel-400 text-white flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-semibold text-gray-500">Email Surat</h4>
+                                    <p class="text-base font-bold text-gray-800 group-hover:text-pastel-500 transition-colors">airaf9ca@gmail.com</p>
+                                </div>
+                            </div>
+                            <span class="w-10 h-10 rounded-full bg-pastel-100 flex items-center justify-center text-pastel-600 group-hover:bg-pastel-400 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+                            </span>
+                        </a>
+
+                    </div>
+
+                    <!-- Quick Message Form (Right Column) -->
+                    <div class="lg:col-span-6">
+                        <div class="glass-card p-8 rounded-3xl border border-pastel-200 shadow-xl">
+                            <h3 class="font-serif text-2xl font-bold text-gray-800 mb-2">Kirim Pesan Cepat 🌷</h3>
+                            <p class="text-xs text-gray-500 mb-6">Tinggalkan pesan di bawah ini, saya akan merespons secepat mungkin.</p>
+                            
+                            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Nama Lengkap</label>
+                                    <input type="text" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl border border-pastel-200 focus:outline-none focus:border-pastel-400 focus:ring-2 focus:ring-pastel-100 transition-all bg-white/80 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Alamat Email / WA</label>
+                                    <input type="text" required placeholder="Contoh: nama@gmail.com / 0812..." class="w-full px-4 py-3 rounded-xl border border-pastel-200 focus:outline-none focus:border-pastel-400 focus:ring-2 focus:ring-pastel-100 transition-all bg-white/80 text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Pesan Anda</label>
+                                    <textarea rows="4" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-pastel-200 focus:outline-none focus:border-pastel-400 focus:ring-2 focus:ring-pastel-100 transition-all bg-white/80 text-sm resize-none"></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-3.5 rounded-xl bg-pastel-400 hover:bg-pastel-500 text-white font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i> Kirim Pesan Now
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 6. FOOTER SECTION -->
+    <footer class="bg-white border-t border-pastel-200 pt-12 pb-8 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-pastel-200/60">
+                
+                <!-- Brand Footer -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-pastel-100 flex items-center justify-center text-pastel-500">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C10.5 4 9 7 9 10c0 2.5 1.5 4.5 3 5 1.5-0.5 3-2.5 3-5 0-3-1.5-6-3-8z"/>
+                            <path d="M8 5C6.5 7 5 9.5 5 12c0 3 2 5.5 4 6-1-1.5-1.5-3.5-1-5.5C8.5 10 9 7.5 8 5z"/>
+                            <path d="M16 5c-1 2.5-.5 5 .0 7.5.5 2 0 4-1 5.5 2-.5 4-3 4-6 0-2.5-1.5-5-3-7z"/>
+                            <path d="M12 15v7M12 22c-2-2-4-3-4-3M12 22c2-2 4-3 4-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-serif font-bold text-gray-800 text-lg">Aira Fabianca</h4>
+                        <p class="text-xs text-pastel-600 font-medium">SMK CYBER MEDIA - MPLB</p>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation Menu -->
+                <nav class="flex flex-wrap justify-center gap-6 text-sm font-medium text-gray-600">
+                    <a href="#hero" class="hover:text-pastel-500 transition-colors">Hero</a>
+                    <a href="#about" class="hover:text-pastel-500 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-pastel-500 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-pastel-500 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-pastel-500 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Social Icons -->
+                <div class="flex items-center gap-3">
+                    <a href="https://instagram.com/biaacsfe" target="_blank" class="w-9 h-9 rounded-full bg-pastel-50 hover:bg-pastel-100 text-pastel-500 flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@.m0onszss" target="_blank" class="w-9 h-9 rounded-full bg-pastel-50 hover:bg-pastel-100 text-pastel-500 flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="https://wa.me/6287739133889" target="_blank" class="w-9 h-9 rounded-full bg-pastel-50 hover:bg-pastel-100 text-pastel-500 flex items-center justify-center transition-colors">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Footer Text Requirement -->
+            <div class="pt-6 text-center">
+                <p class="text-sm font-medium text-gray-600">
+                    dibuat dengan ❤️ oleh Aira fabianca
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification UI -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 glass-card p-4 rounded-2xl border border-pastel-300 shadow-2xl flex items-center gap-3 max-w-xs">
+        <div class="w-10 h-10 rounded-full bg-pastel-400 text-white flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div>
+            <h5 class="text-xs font-bold text-gray-800">Pesan Terkirim!</h5>
+            <p class="text-[11px] text-gray-600">Terima kasih telah menghubungi Aira. 🌷</p>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Submission Mock Feedback
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            
+            // Show Toast
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            // Reset form
+            document.getElementById('contactForm').reset();
+
+            // Hide Toast after 4 seconds
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
